@@ -149,3 +149,15 @@ def shoe_size(name)
   end
 end
 
+def team_colors(team_input)
+  if team_input.downcase == "charlotte hornets" 
+    return game_hash[:away][:colors]
+  else return game_hash[:home][:colors]
+  end
+end
+
+def team_names
+  game_hash.map do |team, team_info|
+    team_info[:team_name]
+  end
+end
