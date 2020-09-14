@@ -129,7 +129,12 @@ end
 
 
 
-def num_points_scored player_name
-  players = game_hash[:home][:players].merge(game_hash[:away][:players])
-  players[player_name][:points]
+def num_points_scored(player_search)
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:player_name] == player_search
+        return player[:points]
+      end
+    end
+  end
 end
